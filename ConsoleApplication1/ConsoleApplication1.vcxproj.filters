@@ -21,19 +21,10 @@
     <ClCompile Include="date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PV_discrete.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TermStructure.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ConsoleApplication2.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="term_structure_class.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="term_structure_class_flat.cpp">
+    <ClCompile Include="BondPricing.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -41,19 +32,10 @@
     <ClInclude Include="date.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PV_discrete.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TermStructure.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="term_structure_class.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="term_structure_class_flat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="fin_recipes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BondPricing.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
