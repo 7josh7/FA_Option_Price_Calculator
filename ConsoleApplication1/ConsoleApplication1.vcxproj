@@ -128,16 +128,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BlackScholes.cpp" />
+    <ClCompile Include="BlackScholes_example.cpp" />
     <ClCompile Include="BondPricing.cpp" />
     <ClCompile Include="date_example.cpp" />
     <ClCompile Include="bond_price_example.cpp" />
     <ClCompile Include="date.cpp" />
+    <ClCompile Include="DStat.cpp" />
+    <ClCompile Include="DStat_example.cpp" />
     <ClCompile Include="term_structure.cpp" />
     <ClCompile Include="term_structure_example.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BlackScholes.h" />
     <ClInclude Include="BondPricing.h" />
     <ClInclude Include="date.h" />
+    <ClInclude Include="DStat.h" />
     <ClInclude Include="fin_recipes.h" />
     <ClInclude Include="term_structure.h" />
   </ItemGroup>
