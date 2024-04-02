@@ -15,16 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ConsoleApplication1.cpp">
+    <ClCompile Include="date_example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="date.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ConsoleApplication2.cpp">
+    <ClCompile Include="bond_price_example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BondPricing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="term_structure.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="term_structure_example.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -36,6 +42,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BondPricing.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="term_structure.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
