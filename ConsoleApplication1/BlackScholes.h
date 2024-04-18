@@ -4,6 +4,7 @@
 
 #include "DStat.h" // Include the header for statistical functions
 #include <cmath> // Include the header for mathematical functions
+#include <stdexcept>  // Include standard exceptions
 
 
 class BlackScholes{
@@ -18,9 +19,12 @@ protected:
     double d2; // d2    
     double n_d1; // standard normal cumulative distribution function
     double n_d2; // standard normal cumulative distribution function
+    void validateInputs(double K, double sigma, double time);
 public:
+    // Constructor
     BlackScholes(const double& S, const double& K, const double& r, const double& sigma, const double& time)
         : S_(S), K_(K), r_(r), sigma_(sigma), time_(time) {
+        validateInputs(K, sigma, time);
         time_sqrt = std::sqrt(time_);
         calculate_d1_d2();
     }

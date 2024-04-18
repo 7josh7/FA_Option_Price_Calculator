@@ -4,6 +4,12 @@
 
 DFinMath::DStat myDStat;
 
+void BlackScholes::validateInputs(double K, double sigma, double time) {
+    if (K <= 0) throw std::invalid_argument("Strike price must be greater than zero.");
+    if (sigma <= 0) throw std::invalid_argument("Volatility must be greater than zero.");
+    if (time <= 0) throw std::invalid_argument("Time to maturity must be greater than zero.");
+}
+
 // Setter methods
 void BlackScholes::calculate_d1_d2() {
     d1 = (std::log(S_ / K_) + r_ * time_ + 0.5 * sigma_ * sigma_ * time_) / (sigma_ * time_sqrt);
@@ -17,6 +23,7 @@ void BlackScholes::setS(double S) {
 }
 
 void BlackScholes::setK(double K) {
+    if (K <= 0) throw std::invalid_argument("Strike price must be greater than zero.");
     K_ = K;
     calculate_d1_d2();
     calculate_n_d1_n_d2();
@@ -29,12 +36,14 @@ void BlackScholes::setR(double r) {
 }
 
 void BlackScholes::setSigma(double sigma) {
+    if (sigma <= 0) throw std::invalid_argument("Volatility must be greater than zero.");
     sigma_ = sigma;
     calculate_d1_d2();
     calculate_n_d1_n_d2();
 }
 
 void BlackScholes::setTime(double time) {
+    if (time <= 0) throw std::invalid_argument("Time to maturity must be greater than zero.");
     time_ = time;
     time_sqrt = std::sqrt(time_);
     calculate_d1_d2();
