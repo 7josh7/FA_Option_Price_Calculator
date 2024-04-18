@@ -105,10 +105,15 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Users\Joshua\source\nana-master\include</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Joshua\source\nana-master\build\bin</AdditionalLibraryDirectories>
+      <AdditionalDependencies>nana_v143_Debug_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -136,6 +141,7 @@
     <ClCompile Include="date.cpp" />
     <ClCompile Include="DStat.cpp" />
     <ClCompile Include="DStat_example.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="term_structure.cpp" />
     <ClCompile Include="term_structure_example.cpp" />
   </ItemGroup>
