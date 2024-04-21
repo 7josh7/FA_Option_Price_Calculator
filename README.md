@@ -1,58 +1,42 @@
-# README for Black-Scholes Option Pricing Model Implementation
 
-## Overview
+README for Black-Scholes Option Pricing Model Implementation
+Overview
+This repository contains a GUI-based implementation of the Black-Scholes model, a fundamental mathematical model for pricing European-style options. Utilizing this model, users can calculate the prices of call and put options through a graphical interface that simplifies the input of variables such as stock price, strike price, and maturity dates. The model is used extensively in financial markets to estimate the fair value of options, enabling traders to identify potentially undervalued or overvalued options.
 
-This repository contains the implementation of the Black-Scholes model, a mathematical model for pricing an options contract. Specifically, it calculates the price of European call and put options. The Black-Scholes formula is widely used by option traders who buy options that are priced under the formula calculated value and sell options that are priced higher than the Black-Schole calculated value.
+Files
+The application comprises several components, structured as follows:
 
-## Files
+main.cpp: Contains the main function that sets up the GUI and links the computational logic with user inputs.
+BlackScholes.h: Header file that declares the BlackScholes, CallOption, and PutOption classes for pricing options.
+date.h: Defines the date class used for managing date inputs and calculations related to option expiration.
+date.cpp: Implements the methods declared in date.h for date management and day count conventions.
+Dependencies
+This application relies on the Nana GUI library to provide an interactive interface:
 
-The implementation consists of two primary files:
+Nana C++ Library: A modern C++ GUI library designed for simplicity and flexibility.
+Standard C++ Libraries: <iostream>, <sstream>, <vector>, <string>, used for input/output operations, string manipulations, and handling collections.
+Installation
+To run this application, you need to set up the Nana C++ library and configure your development environment to compile C++ code. Steps include:
 
-- `BlackScholes.h`: This header file declares the `BlackScholes` class, along with its derived classes `CallOption` and `PutOption`.
-- `BlackScholes.cpp`: This source file contains the definitions of the functions declared in `BlackScholes.h`.
+Install the Nana C++ library from its official repository and follow the setup instructions.
+Compile the source files using a C++ compiler that supports C++14 or later. Integration with an IDE like Visual Studio is recommended for ease of use.
+Usage
+Upon launching the application, users will interact with a form where they can:
 
-## Dependencies
+Enter financial parameters (stock price, strike price, risk-free rate, volatility).
+Set the starting and expiration dates using a YYYY/MM/DD format.
+Select the appropriate day count convention from a dropdown menu.
+Calculate the prices of the options by clicking the "Calculate Prices" button.
+Results will be displayed in a message box, showing the computed prices for both call and put options based on the Black-Scholes formula.
 
-- `DStat.h`: A header file for statistical functions (not provided in this code snippet). It must define a class `DStat` with a method `NormDist` which computes the standard normal cumulative distribution.
-- `<cmath>`: A header file from the standard library providing access to mathematical functions.
-- `<stdexcept>`: A header file for standard exceptions, used to handle invalid arguments in the class methods.
+Key Classes and Methods
+date Class: Manages date calculations, validates correct date entries, and computes time intervals based on various day count conventions.
+BlackScholes, CallOption, PutOption Classes: Implement the pricing model calculations, with methods to update parameters and compute the option prices.
+Notes
+The application includes error handling to manage invalid dates and other input errors, ensuring robust application performance.
+The GUI is designed for intuitive use, making it accessible even for those with limited experience in financial modeling.
+License
+This project is open-sourced under the MIT License.
 
-## Usage
-
-1. **Creating an Option Object**: 
-   - To price a call option, create an instance of `CallOption` by passing the spot price, strike price, risk-free interest rate, volatility, and time to maturity.
-   - Similarly, to price a put option, create an instance of `PutOption`.
-
-2. **Pricing an Option**: 
-   - Call the `option_price()` method on an instance of `CallOption` or `PutOption` to calculate the price of the option.
-
-3. **Updating Option Parameters**: 
-   - Setters are provided to update the spot price (`setS`), strike price (`setK`), risk-free rate (`setR`), volatility (`setSigma`), and time to maturity (`setTime`).
-
-## Classes
-
-- `BlackScholes`: An abstract base class for the pricing model, which contains common data members and methods for the derived classes.
-- `CallOption`: A derived class from `BlackScholes` for calculating the price of call options.
-- `PutOption`: A derived class from `BlackScholes` for calculating the price of put options.
-
-## Key Methods
-
-- `validateInputs()`: Validates that the strike price, volatility, and time to maturity are positive.
-- `calculate_d1_d2()`: Calculates the d1 and d2 parameters used in the Black-Scholes formula.
-- `calculate_n_d1_n_d2()`: Calculates the values of the standard normal cumulative distribution function for d1 and d2.
-- `option_price()`: A pure virtual function implemented in derived classes to calculate the price of the option.
-
-## Notes
-
-- Exception handling is used to ensure that invalid inputs are managed appropriately.
-
-## License
-
-This code is released under the [MIT License].
-## Disclaimer
-
-This code is for educational purposes and should not be used for financial advice or trading without proper risk management and due diligence.
-
----
-
-Please replace `LICENSE.md` with the path to your actual license file, if available.
+Disclaimer
+This software is intended for educational purposes only and should not be used as the sole basis for financial decisions. Users should conduct their own due diligence or consult with a professional advisor before engaging in options trading.
