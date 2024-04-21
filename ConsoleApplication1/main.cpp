@@ -3,6 +3,7 @@
 #include <nana/gui/widgets/label.hpp>
 #include <nana/gui/widgets/textbox.hpp>
 #include <nana/gui/widgets/button.hpp>
+#include <nana/gui/widgets/combox.hpp>
 #include <sstream>  
 #include <vector>
 #include <string>
@@ -35,6 +36,11 @@ int main() {
     label lblTimeE(fm, rectangle(10, 160, 200, 20));
     lblTimeE.caption("Expiration Date(YYYY/MM/DD):");
 
+    //day count convension
+    label lblDayCount(fm, rectangle(10, 190, 200, 20));
+    lblDayCount.caption("Day Count Convention:");
+
+
     // Create textboxes
     textbox txtS(fm, rectangle(220, 10, 100, 20));
     txtS.multi_lines(false);
@@ -54,8 +60,16 @@ int main() {
     textbox txtTimeE(fm, rectangle(220, 160, 100, 20));
     txtTimeE.multi_lines(false);
 
+    // Create a dropdown list for day count convention
+    std::vector<std::string> dayCountConventions = { "Thirty360", "Thirty365", "Actual360", "Actual365", "ActualActual" };
+    combox cmbDayCount(fm, rectangle(220, 190, 100, 20));
+    for (const auto& dayCount : dayCountConventions) {
+		cmbDayCount.push_back(dayCount);
+	}
+    cmbDayCount.option(0);
+
     // Create button
-    button btnCalculate(fm, rectangle(10, 190, 230, 30));
+    button btnCalculate(fm, rectangle(10, 220, 230, 30));
     btnCalculate.caption("Calculate Prices");
 
     // Event handler for the button
@@ -85,8 +99,22 @@ int main() {
             return;
         }
 
+        // Determine the day count convention based on combox selection
+        DayCountConvention dcc;
+        switch (cmbDayCount.option()) {
+        case 0: dcc = DayCountConvention::Thirty360; break;
+        case 1: dcc = DayCountConvention::Thirty365; break;
+        case 2: dcc = DayCountConvention::Actual360; break;
+        case 3: dcc = DayCountConvention::Actual365; break;
+        case 4: dcc = DayCountConvention::ActualActual; break;
+        default:
+            msgbox mb_error(fm, "Invalid day count convention selected");
+            mb_error.show();
+            return;
+        }
+
         // Calculate the time to maturity using years_until method
-        double timeToMaturity = startingDate.years_until(expirationDate, DayCountConvention::ActualActual);
+        double timeToMaturity = startingDate.years_until(expirationDate, dcc);
 
         // Create a CallOption and a PutOption instance with the computed time to maturity
         CallOption call(S, K, r, sigma, timeToMaturity);
