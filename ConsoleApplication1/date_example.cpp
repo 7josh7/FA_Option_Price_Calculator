@@ -1,33 +1,42 @@
-// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-#include "date.h"
-#include <iostream>
-
+//#include "date.h"
+//#include <iostream>
+//
 //int main() {
-//    date d1(29, 2, 2023);
-//    date d2(30, 2, 2024); 
+//    // Create two date objects
+//    date date1(15, 3, 2023);
+//    date date2(31, 12, 2023);
 //
-//    // Check if dates are valid...
-//    std::cout << "Date d1 is " << (d1.valid() ? "valid" : "invalid") << std::endl;
-//    std::cout << "Date d2 is " << (d2.valid() ? "valid" : "invalid") << std::endl;
-//
-//    // Compare dates
-//    if (d1 < d2) {
-//        std::cout << "d1 is before d2." << std::endl;
+//    // Check if date1 is valid
+//    if (date1.valid()) {
+//        std::cout << "Date1 is valid." << std::endl;
 //    }
 //    else {
-//        std::cout << "d1 is after d2." << std::endl;
+//        std::cout << "Date1 is not valid." << std::endl;
 //    }
 //
-//    // Increment d1 (postfix)
-//    date d1Tomorrow = d1++;
-//    std::cout << "d1 (after increment): " << d1.day() << "/" << d1.month() << "/" << d1.year() << std::endl;
-//    std::cout << "d1Tomorrow: " << d1Tomorrow.day() << "/" << d1Tomorrow.month() << "/" << d1Tomorrow.year() << std::endl;
+//    // Compare two dates
+//    if (date1 < date2) {
+//        std::cout << "Date1 is earlier than Date2." << std::endl;
+//    }
 //
-//    // Decrement d2 (prefix)
-//    date d2Yesterday = --d2;
-//    std::cout << "d2 (after decrement): " << d2.day() << "/" << d2.month() << "/" << d2.year() << std::endl;
-//    std::cout << "d2Yesterday: " << d2Yesterday.day() << "/" << d2Yesterday.month() << "/" << d2Yesterday.year() << std::endl;
+//    // Display the years until date2 from date1 using the 30/360 convention
+//    std::cout << "Years until Date2 from Date1 (30/360): "
+//        << date1.years_until(date2, DayCountConvention::Thirty360) << std::endl;
+//
+//    // Increment and decrement operations
+//    date tomorrow = date1++;
+//    std::cout << "Tomorrow's date from Date1: " << tomorrow.day() << "/" << tomorrow.month() << "/" << tomorrow.year() << std::endl;
+//
+//    date yesterday = --date1;
+//    std::cout << "Yesterday's date from Date1: " << yesterday.day() << "/" << yesterday.month() << "/" << yesterday.year() << std::endl;
+//
+//    // Using next_date and previous_date functions
+//    date nextDay = date::next_date(date1);
+//    std::cout << "Next day from Date1 using function: " << nextDay.day() << "/" << nextDay.month() << "/" << nextDay.year() << std::endl;
+//
+//    date prevDay = date::previous_date(date1);
+//    std::cout << "Previous day from Date1 using function: " << prevDay.day() << "/" << prevDay.month() << "/" << prevDay.year() << std::endl;
 //
 //    return 0;
 //}
-
+//
