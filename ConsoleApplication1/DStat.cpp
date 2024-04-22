@@ -33,7 +33,9 @@ namespace DFinMath
 
 		return z;
 	}
-
+	double DStat::NormDensity(double x) {
+		return (1.0 / sqrt(2.0 * DStat::pi)) * exp(-0.5 * x * x);
+	}
 	double DStat::N_Inv(double x)
 	{
 		//const double SQRT_TWO_PI = 2.506628274631;

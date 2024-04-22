@@ -48,6 +48,9 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="option_price_call_european_binomial_multi_period_given_ud.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="date.h">
@@ -66,6 +69,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BlackScholes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="option_price_call_european_binomial_multi_period_given_ud.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

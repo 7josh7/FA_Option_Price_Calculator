@@ -10,6 +10,7 @@ namespace DFinMath
 	public:
 		const double pi = 3.14159265358979323846;
 		double NormDist(double x);
+		double NormDensity(double x);
 		double N_Inv(double x);
 	};
 }

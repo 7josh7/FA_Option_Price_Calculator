@@ -71,6 +71,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Users\Joshua\source\nana-master\source\gui;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -142,6 +145,7 @@
     <ClCompile Include="DStat.cpp" />
     <ClCompile Include="DStat_example.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="option_price_call_european_binomial_multi_period_given_ud.cpp" />
     <ClCompile Include="term_structure.cpp" />
     <ClCompile Include="term_structure_example.cpp" />
   </ItemGroup>
@@ -151,6 +155,7 @@
     <ClInclude Include="date.h" />
     <ClInclude Include="DStat.h" />
     <ClInclude Include="fin_recipes.h" />
+    <ClInclude Include="option_price_call_european_binomial_multi_period_given_ud.h" />
     <ClInclude Include="term_structure.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
