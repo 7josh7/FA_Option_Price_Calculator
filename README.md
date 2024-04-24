@@ -2,56 +2,56 @@
 
 ## Overview
 
-This repository contains a GUI-based implementation of the Black-Scholes model, a fundamental mathematical model for pricing European-style options. Utilizing this model, users can calculate the prices of call and put options through a graphical interface that simplifies the input of variables such as stock price, strike price, and maturity dates. The model is used extensively in financial markets to estimate the fair value of options, enabling traders to identify potentially undervalued or overvalued options.
+This repository hosts a GUI-based application for the Black-Scholes model, essential for pricing European-style options. This implementation allows users to compute the fair values of call and put options using a user-friendly interface that simplifies entering necessary financial parameters such as stock prices, strike prices, volatility, and maturity dates. It also integrates the Nelson-Siegel model parameters to model the term structure of interest rates, enhancing the robustness and accuracy of the pricing model.
 
 ## Files
 
-The application comprises several components, structured as follows:
+This application is structured as follows:
 
-- `main.cpp`: Contains the main function that sets up the GUI and links the computational logic with user inputs.
-- `BlackScholes.h`: Header file that declares the `BlackScholes`, `CallOption`, and `PutOption` classes for pricing options.
-- `date.h`: Defines the `date` class used for managing date inputs and calculations related to option expiration.
-- `date.cpp`: Implements the methods declared in `date.h` for date management and day count conventions.
+- **`main.cpp`**: The primary entry of the application, setting up the GUI and handling user interactions.
+- **`BlackScholes.h`**: Header file that defines the `BlackScholes`, `CallOption`, and `PutOption` classes essential for option pricing.
+- **`date.h` & `date.cpp`**: Manages date inputs, performs date calculations, and supports various day count conventions.
+- **`term_structure.h`**: Includes the implementation of the Nelson-Siegel parameters and related interest rate calculations.
 
 ## Dependencies
 
-This application relies on the Nana GUI library to provide an interactive interface:
+To provide a graphical user interface, this application relies on:
 
-- Nana C++ Library: A modern C++ GUI library designed for simplicity and flexibility.
-- Standard C++ Libraries: `<iostream>`, `<sstream>`, `<vector>`, `<string>`, used for input/output operations, string manipulations, and handling collections.
+- **Nana C++ Library**: A modern C++ GUI library for building cross-platform graphical applications. It offers simplicity and high performance.
+- **Standard C++ Libraries**: Including `<iostream>`, `<sstream>`, `<vector>`, `<string>` for handling input/output operations, string manipulation, and vector data structures.
 
-## Installation
+## Installation and Setup
 
-To run this application, you need to set up the Nana C++ library and configure your development environment to compile C++ code. Steps include:
+To run this application, follow these steps to set up your environment:
 
-1. Install the Nana C++ library from its [official repository](https://github.com/cnjinhao/nana) and follow the setup instructions.
-2. Compile the source files using a C++ compiler that supports C++14 or later. Integration with an IDE like Visual Studio is recommended for ease of use.
+1. **Install the Nana C++ Library**: Obtain the library from its [official repository on GitHub](https://github.com/cnjinhao/nana). Follow the installation instructions specific to your operating system and development environment.
+2. **Compile the Application**: Use a C++ compiler that supports C++14 or later. It's recommended to use an IDE like Microsoft Visual Studio or a similar tool that simplifies C++ development and Nana library integration.
 
-## Usage
+## Usage Instructions
 
-Upon launching the application, users will interact with a form where they can:
+After launching the application, the interface allows you to:
 
-1. Enter financial parameters (stock price, strike price, risk-free rate, volatility).
-2. Set the starting and expiration dates using a YYYY/MM/DD format.
-3. Select the appropriate day count convention from a dropdown menu.
-4. Calculate the prices of the options by clicking the "Calculate Prices" button.
+1. **Input Financial Parameters**: Fill in fields for stock price, strike price, volatility, dividend yield, and Nelson-Siegel parameters to model the risk-free interest rate curve dynamically.
+2. **Specify Dates**: Enter the starting and expiration dates for the option in the YYYY/MM/DD format.
+3. **Choose Day Count Convention**: Select from predefined conventions which affect how interest accrues over time.
+4. **Compute Option Prices**: Click the "Calculate Prices" button to display the results, including both call and put option prices and their Greeks (Delta, Gamma, Vega, Theta, and Rho).
 
-Results will be displayed in a message box, showing the computed prices for both call and put options based on the Black-Scholes formula.
+Results are displayed in a message box, showing detailed calculations based on user inputs and the integrated pricing models.
 
 ## Key Classes and Methods
 
-- **date Class**: Manages date calculations, validates correct date entries, and computes time intervals based on various day count conventions.
-- **BlackScholes, CallOption, PutOption Classes**: Implement the pricing model calculations, with methods to update parameters and compute the option prices.
+- **`date Class`**: Handles date validation, conversion, and calculation of time intervals using different day count conventions.
+- **`BlackScholes` and its derivatives `CallOption` and `PutOption`**: Perform the calculations using the Black-Scholes formula, adjusted dynamically based on the specified interest rate model.
 
 ## Notes
 
-- The application includes error handling to manage invalid dates and other input errors, ensuring robust application performance.
-- The GUI is designed for intuitive use, making it accessible even for those with limited experience in financial modeling.
+- The application includes error handling to alert users about invalid dates and other input-related issues, ensuring reliable operation.
+- Designed for intuitive operation, the GUI caters to users with varying levels of expertise in financial modeling or programming.
 
 ## License
 
-This project is open-sourced under the MIT License.
+This project is released under the MIT License, allowing free use, modification, and distribution.
 
 ## Disclaimer
 
-This software is intended for educational purposes only and should not be used as the sole basis for financial decisions. Users should conduct their own due diligence or consult with a professional advisor before engaging in options trading.
+This software is for educational and informational purposes only. It is not intended for making actual trading or investment decisions. Always consult with a qualified financial advisor before making investment decisions.
