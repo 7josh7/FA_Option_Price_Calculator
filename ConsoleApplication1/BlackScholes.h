@@ -6,7 +6,6 @@
 #include <cmath> // Include the header for mathematical functions
 #include <stdexcept>  // Include standard exceptions
 
-
 class BlackScholes{
 protected:
     double S_;   // spot (underlying) price
